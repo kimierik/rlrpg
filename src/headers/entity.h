@@ -18,8 +18,11 @@ class Entity{
     //tells gamestate that it no longer exists
     virtual ~Entity();
 
-    // handles if player collides with this.. this is probably chaged to interacts with not only collides
+    // handles if player interacts with this.. 
     virtual void interactionHandle(){}
+    
+    //if the entity has logic that needs to be run on game update 
+    virtual void Update(){}
 
     //abstract draw method for entities
     ///all entities probably should have a sprite or something
