@@ -1,1 +1,1 @@
-g++ -o a.out main.cpp src/impls/gamestate.cpp src/impls/entity.cpp -lraylib -Wall -ggdb -rdynamic && ./a.out
+g++ main.cpp -o build/game src/gamestate/gamestate.cpp src/gamestate/globalappstate.cpp src/entities/entity.cpp src/ui/button.cpp src/ui/view.cpp src/input/menu.cpp src/utils/debug.c -lraylib -Wall -ggdb -rdynamic
