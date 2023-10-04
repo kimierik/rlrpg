@@ -3,9 +3,9 @@
 //things like items and mobs
 #include <cstdio>
 #include <raylib.h>
-#include "../headers/gamestate.h"
+#include "../gamestate/gamestate.h"
 
-#include "../headers/entity.h"
+#include "./entity.h"
 
 
 

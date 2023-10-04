@@ -11,11 +11,13 @@
 
 #include "../inventory.cpp"
 
-#include "./entity.h" 
+#include "../entities/entity.h" 
+
+#include "../input/input.h"
 
 
-
-class GameState{
+//inherrits drawable and pawn
+class GameState : public Drawable, public InputPawn{
 
     //todo make a propper interface to interface with player not just a public variable
     public:
@@ -33,6 +35,15 @@ class GameState{
     GameState(const GameState&ob)=delete;
     static GameState * getGameState();
     // end of singelton logic
+
+
+
+
+
+
+    //inherrits overrides
+    void handleInput(InputAction action) override;
+    void draw()override{drawScreen();}
 
 
 
@@ -91,7 +102,6 @@ class GameState{
 
 
     void drawScreen(){
-        BeginDrawing();
 
         ClearBackground(RAYWHITE);
         // make a grid on the side of the screen that displays an inventory
@@ -111,7 +121,6 @@ class GameState{
         DrawRectangle(player->cords.x*TILESIZE, player->cords.y*TILESIZE, TILESIZE, TILESIZE, c);
 
 
-        EndDrawing();
     }
 
 
